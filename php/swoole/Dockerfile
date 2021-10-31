@@ -46,9 +46,13 @@ RUN php -v \
     linux-headers \
     libzip libzip-dev \
     libpng libpng-dev \
+    jpeg-dev libjpeg-turbo-dev \
     imagemagick imagemagick-dev libgomp \
-    # install composer
-    && docker-php-ext-install pcntl opcache bcmath sockets pdo_mysql zip gd \
+    freetype-dev \ 
+    # config ext 
+    && docker-php-ext-configure gd --with-freetype --with-jpeg \
+    # install ext
+    && docker-php-ext-install -j$(getconf _NPROCESSORS_ONLN) pcntl opcache bcmath sockets pdo_mysql zip gd \
     && cd /tmp \
     # && wget https://github.com/composer/composer/releases/download/${COMPOSER_VERSION}/composer.phar \
     && chmod +x composer.phar \

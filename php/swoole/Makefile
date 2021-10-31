@@ -3,7 +3,7 @@ default:build
 
 down:
 	curl -L -o cmake-3.19.1.tar.gz https://github.com/Kitware/CMake/releases/download/v3.19.1/cmake-3.19.1.tar.gz
-	wget https://github.com/swoole/swoole-src/archive/v4.7.1.tar.gz -O swoole.tar.gz
+	wget https://github.com/swoole/swoole-src/archive/v4.8.1.tar.gz -O swoole.tar.gz
 	wget https://github.com/composer/composer/releases/download/2.1.6/composer.phar -O composer.phar
 
 ### Build:  build swoole
